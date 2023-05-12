@@ -1,0 +1,81 @@
+@import "../../scss/variables";
+
+
+.card-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 2rem;
+
+    .cards{
+        border: 2px solid black;
+        width: 500px;
+        height: 350px;
+        position: relative;
+        overflow: hidden;
+
+        &:hover .card-over{
+            transform: translateY(0%);
+        }
+
+        &:hover img{
+            opacity: 0.5;
+        }
+
+        .title{
+            position: absolute;
+            top: 0;
+            left: 0;
+            color: $cardNavBgColor;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 1rem;
+            border-radius: 30px;
+            margin-top: 10px;
+            margin-left: 10px;
+            z-index: 2;
+        }
+
+        .date{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            background-color: rgba(0, 0, 0, 0.8);
+            color: $cardNavBgColor;
+            font-size: 0.5rem;
+            padding: 1rem;
+            border-radius: 10px;
+            z-index: 2;
+        }
+       .image{
+            width: 500px;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 10px;
+        } 
+        .card-over{
+            width: 500px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: $secondaryColor;
+            padding: 1rem;
+            border-radius: 10px;
+            transform: translateY(100%);
+            transition: transform 0.7s ease-in-out;
+            z-index: 3;
+            text-align: justify;
+            font-size: 1.5rem;
+            max-height: 75%;
+            overflow: auto;
+
+            &::-webkit-scrollbar{
+                display: none;
+            }
+        }
+    }
+}
+
+
+
